@@ -8,14 +8,10 @@ users = {'Андрійович Андрій Андрійович': '29.06.1995',
          'Семенович Семен Семенович': '28.06.1963'}
 
 data_ = datetime.now()
-print()
-days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
 
 
-print('Сьогодні: ', data_.strftime('%A %d %B %Y'))
+print('\nСьогодні: ', data_.strftime('%A %d %B %Y'))
 print(f'За рахунком сьогодні {data_.weekday()+1}-й день тижня') # Сьогоднішній день тижня від 0 до 6 з + 1
-print()
-
 def get_birthdays_per_week(users):
     birthday_users = {}  # Словник працівників у кого ДН на цьому тижні.
     for name in users:
@@ -34,31 +30,28 @@ def get_birthdays_per_week(users):
         this_week[day].append(name)
         
     
-    print()
-    print(f'На цьому тижні потрібно привітати таких працівників: ')
-    print()
+    print(f'\nНа цьому тижні потрібно привітати таких працівників: \n')
     a = this_week["Monday"]
     if len(a) >= 1:
-        a= str(a).replace("['", '').replace("']", '').replace("'", '')
+        a = str(a).replace("['", '').replace("']", '').replace("'", '')
         print(f'Понеділок : {a}')
     b = this_week["Tuesday"]
     if len(b) >= 1:
-        b= str(b).replace("['", '').replace("']", '').replace("'", '')
+        b = str(b).replace("['", '').replace("']", '').replace("'", '')
         print(f'Вівторок  : {b}')
     d = this_week["Wednesday"]
     if len(d) >= 1:
-        d= str(d).replace("['", '').replace("']", '').replace("'", '')
+        d = str(d).replace("['", '').replace("']", '').replace("'", '')
         print(f'Середа    : {d}')
     c = this_week["Thursday"]
     if len(c) >= 1:
-        c= str(c).replace("['", '').replace("']", '').replace("'", '')
+        c = str(c).replace("['", '').replace("']", '').replace("'", '')
         print(f'Четвер    : {c}')
     q = this_week["Friday"]
     if len(q) >= 1:
-        q= str(q).replace("['", '').replace("']", '').replace("'", '')
+        q = str(q).replace("['", '').replace("']", '').replace("'", '')
         print(f'Пятниця   : {q}')
 
-    print()
 get_birthdays_per_week(users)
 
 
